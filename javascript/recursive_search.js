@@ -1,5 +1,13 @@
 function recursiveSearch(arr, target) {
-  // type your code here
+  if (arr.length === 0) {
+    return false
+  } else if (arr[0] === target) {
+    return true
+  } else {
+    let newArr = [...arr]
+    newArr.shift()
+    return recursiveSearch(newArr, target)
+  }
 }
 
 if (require.main === module) {
@@ -15,5 +23,5 @@ if (require.main === module) {
 
 module.exports = recursiveSearch;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// It is possible to check the first index and of the array and then call the function again?
+//something I learned: you MUST return the function! 
